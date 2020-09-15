@@ -45,6 +45,7 @@ function clearInput() {
 function createItem() {
   const li = document.createElement('li');
   li.textContent = inputText.value;
+  li.classList.add('no-select');
   li.addEventListener('click', selectItem);
   li.addEventListener('dblclick', markItem);
   taskList.appendChild(li);

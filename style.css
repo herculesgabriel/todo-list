@@ -85,6 +85,10 @@ ol {
   text-decoration: line-through solid black;
 }
 
+.no-select {
+  user-select: none;
+}
+
 .options {
   background-color: rgb(26 , 26 , 46);
   bottom: 0;
