@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Roboto+Mono:wght@200;300;400&display=swap" rel="stylesheet">
+  <title>Minha Lista de Tarefas</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section class="center">
+    <header>
+      <h1>Minha Lista de Tarefas</h1>
+      <p id="funcionamento">
+        Clique duas vezes em um item para marcá-lo como completo
+      </p>
+    </header>
+
+    <div class="input">
+      <input id="texto-tarefa" type="text">
+      <button id="criar-tarefa">
+        Adicionar
+      </button>
+    </div>
+
+    <div class="list">
+      <ol id="lista-tarefas"></ol>
+    </div>
+
+    <div class="options">
+      <button id="apaga-tudo">
+        Apagar tudo
+      </button>
+      <button id="remover-finalizados">
+        Remover finalizados
+      </button>
+      <button id="salvar-tarefas">
+        Salvar tarefas
+      </button>
+      <button id="mover-cima">
+        Mover para cima
+      </button>
+      <button id="mover-baixo">
+        Mover para baixo
+      </button>
+      <button id="remover-selecionado">
+        Remover selecionado
+      </button>
+      <button id="limpar-selecao">
+        Limpar seleção
+      </button>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
