@@ -63,12 +63,12 @@ function save() {
 
 function moveUp() {
   const item = document.querySelector('.selected');
-  if (item !== null) if (item.previousSibling !== null) item.after(item.previousSibling);
+  if (item !== null && item.previousSibling !== null) item.after(item.previousSibling);
 }
 
 function moveDown() {
   const item = document.querySelector('.selected');
-  if (item !== null) if (item.nextSibling !== null) item.before(item.nextSibling);
+  if (item !== null && item.nextSibling !== null) item.before(item.nextSibling);
 }
 
 function removeSelected() {
