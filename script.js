@@ -50,6 +50,7 @@ function createItem() {
   li.addEventListener('dblclick', markItem);
   taskList.appendChild(li);
 
+  save();
   clearInput();
 }
 
