@@ -12,25 +12,30 @@ const buttonClearDone = document.getElementById('remover-finalizados');
 function clearAll() {
   const listItems = document.querySelectorAll('li');
   listItems.forEach((element) => taskList.removeChild(element));
+  save();
 }
 
 function clearDone() {
   const listItems = document.querySelectorAll('.completed');
   if (listItems.length !== 0) listItems.forEach((element) => taskList.removeChild(element));
+  save();
 }
 
 function clearSelection() {
   const item = document.querySelector('.selected');
   if (item !== null) item.classList.remove('selected');
+  save();
 }
 
 function selectItem(event) {
   clearSelection();
   event.target.classList.add('selected');
+  save();
 }
 
 function markItem(event) {
   event.target.classList.toggle('completed');
+  save();
 }
 
 function isEmpty() {
@@ -65,16 +70,19 @@ function save() {
 function moveUp() {
   const item = document.querySelector('.selected');
   if (item !== null && item.previousSibling !== null) item.after(item.previousSibling);
+  save();
 }
 
 function moveDown() {
   const item = document.querySelector('.selected');
   if (item !== null && item.nextSibling !== null) item.before(item.nextSibling);
+  save();
 }
 
 function removeSelected() {
   const item = document.querySelector('.selected');
   if (item !== null) taskList.removeChild(item);
+  save();
 }
 
 function getList() {
