@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(22 , 33 , 62);
+  background-color: rgb(22, 33, 62);
   color: white;
   font-family: Nunito, sans-serif;
   font-size: 1.5em;
@@ -16,11 +16,11 @@ header {
 }
 
 h1 {
-  color: rgb(233 , 69 , 96);
+  color: rgb(233, 69, 96);
 }
 
 input {
-  border-color: rgb(15 , 52 , 96);
+  border-color: rgb(15, 52, 96);
   border-radius: 4px;
   border-width: 3px;
   font-family: Nunito, sans-serif;
@@ -31,14 +31,14 @@ input {
 }
 
 button {
-  border-color: rgb(233 , 69 , 96);
+  border-color: rgb(233, 69, 96);
   border-radius: 5px;
   border-width: 3px;
   font-family: Nunito, sans-serif;
   font-size: medium;
   font-weight: 600;
   height: 30px;
-  outline-color: rgb(26 , 26 , 46);
+  outline-color: rgb(26, 26, 46);
   padding: 0 10px;
   vertical-align: middle;
 }
@@ -52,6 +52,8 @@ button {
 
 ol li {
   counter-increment: muffins;
+  display: flex;
+  justify-content: space-between;
 }
 
 ol li:before {
@@ -59,10 +61,10 @@ ol li:before {
 }
 
 .selected:before {
-  color: rgb(233 , 69 , 96);
+  color: rgb(233, 69, 96);
   content: counter(muffins) ' 👉 ';
   font-weight: 900;
-  text-shadow: 3px 3px 3px rgb(15 , 52 , 96);
+  text-shadow: 3px 3px 3px rgb(15, 52, 96);
 }
 
 .completed:before {
@@ -85,12 +87,20 @@ ol {
   text-decoration: line-through solid black;
 }
 
+.moving {
+  background-color: rgb(233, 69, 96);
+  color: black;
+  border-radius: 5px;
+  padding-left: 10px;
+  transition: padding 0.3s;
+}
+
 .no-select {
   user-select: none;
 }
 
 .options {
-  background-color: rgb(26 , 26 , 46);
+  background-color: rgb(26, 26, 46);
   bottom: 0;
   left: 0;
   padding: 20px 30px;
@@ -101,4 +111,10 @@ ol {
 .options button {
   margin: 10px 30px;
   margin-right: 10px;
+}
+
+.edit-button {
+  background-color: transparent;
+  color: white;
+  border: none;
 }
