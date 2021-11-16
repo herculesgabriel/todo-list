@@ -6,7 +6,17 @@ const buttonClearAll = document.getElementById('apaga-tudo')
 const buttonClearDone = document.getElementById('remover-finalizados')
 let currentMoving = document.querySelector('.moving')
 
+function confirmDeleteAction() {
+  const firstAnswer = confirm('Tem certeza que deseja apagar todas as tarefas?')
+  if (!firstAnswer) return false
+  const secondAnswer = confirm('Essa ação não poderá ser desfeita. Continuar?')
+  if (!secondAnswer) return false
+  return true
+}
+
 function clearAll() {
+  if (!confirmDeleteAction()) return
+
   const listItems = document.querySelectorAll('li')
   listItems.forEach(element => taskList.removeChild(element))
   save()
