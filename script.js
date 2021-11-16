@@ -4,9 +4,20 @@ const taskList = document.getElementById('lista-tarefas')
 const buttonAddTask = document.getElementById('criar-tarefa')
 const buttonClearAll = document.getElementById('apaga-tudo')
 const buttonClearDone = document.getElementById('remover-finalizados')
+const buttonClearAllDone = document.getElementById('desmarcar-todos')
 let currentMoving = document.querySelector('.moving')
 
+function confirmDeleteAction() {
+  const firstAnswer = confirm('Tem certeza que deseja apagar todas as tarefas?')
+  if (!firstAnswer) return false
+  const secondAnswer = confirm('Essa ação não poderá ser desfeita. Continuar?')
+  if (!secondAnswer) return false
+  return true
+}
+
 function clearAll() {
+  if (!confirmDeleteAction()) return
+
   const listItems = document.querySelectorAll('li')
   listItems.forEach(element => taskList.removeChild(element))
   save()
@@ -23,6 +34,14 @@ function clearSelection() {
   const item = document.querySelector('.selected')
   if (item !== null) item.classList.remove('selected')
   save()
+}
+
+function clearAllDone() {
+  const items = document.querySelectorAll('.completed')
+  if (items.length) {
+    items.forEach(item => item.classList.remove('completed'))
+    save()
+  }
 }
 
 function selectItem(event) {
@@ -171,6 +190,7 @@ inputText.addEventListener('keydown', event => {
 buttonAddTask.addEventListener('click', addTask)
 buttonClearAll.addEventListener('click', clearAll)
 buttonClearDone.addEventListener('click', clearDone)
+buttonClearAllDone.addEventListener('click', clearAllDone)
 body.addEventListener('keydown', keyPressedHandler)
 
 getList()
